@@ -13,3 +13,7 @@
       Duration: 1200 
     ansible.builtin.debug:
       msg: "Course::{{Course}} {{Trainer}} {{Duration}}"      
+
+  - name: vars2
+    ansible.builtin.debug:
+      msg: "Course::{{Course}} {{Trainer}} {{Duration}}"    
