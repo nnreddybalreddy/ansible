@@ -1,0 +1,15 @@
+- name: vars
+  hosts: localhost
+  vars:
+    Course: "Ansible"
+    Trainer: "Siva"
+    Duration: 120
+  become: yes
+  tasks:
+  - name: vars
+    vars:
+      Course: "Ansible1"
+      Trainer: "Siva1"
+      Duration: 1200 
+    ansible.builtin.debug:
+      msg: "Course::{{Course}} {{Trainer}} {{Duration}}"      
