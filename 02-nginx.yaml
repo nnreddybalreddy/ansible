@@ -20,9 +20,6 @@
     ansible.builtin.dnf:
       name: nginx
       state: latest
-  - name: systemctl
-    ansible.builtin.system:
-      name: nginx
-      state: started
-      enabled: yes    
+      
+
     
