@@ -1,8 +1,8 @@
 - name: vars with preg
   hosts: localhost
   become: yes
-  vars:
-    WISHES: "WISHES from play level"
+  # vars:
+  #   WISHES: "WISHES from play level"
   # vars_prompt:
   #   name: WISHES
   #   prompt: "Pls enter WISHES from prompt level"
