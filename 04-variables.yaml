@@ -1,11 +1,21 @@
+# - name: variables
+#   hosts: localhost
+#   vars:
+#     course: "Ansible"
+#     Trainer: "Sivakumar"
+#     Duration: "120hr"
+#   become: yes
+#   tasks:
+#   - name: print information
+#     ansible.builtin.debug:
+#       msg: "Hi we are learning course:::{{course}} from trainer::{{Trainer}} duration is {{Duration}}"
+
 - name: variables
   hosts: localhost
-  vars:
-    course: "Ansible"
-    Trainer: "Sivakumar"
-    Duration: "120hr"
   become: yes
+  vars:
+  - Course: "DOCKER"
   tasks:
-  - name: print information
+  - name: variables
     ansible.builtin.debug:
-      msg: "Hi we are learning course:::{{course}} from trainer::{{Trainer}} duration is {{Duration}}"
+      msg: "{{Course}}"
