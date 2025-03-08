@@ -12,7 +12,7 @@
   tasks:
   - name: vars with preg
     vars:
-      WISHES: "{{vars from task level}}"
+      WISHES: "vars from task level"
     ansible.builtin.debug:
       msg: "{{WISHES}}"  
   
