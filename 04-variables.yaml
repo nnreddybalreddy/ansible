@@ -21,4 +21,6 @@
       Course: "KUBS"
     ansible.builtin.debug:
       msg: "{{Override: Course}}"
-    
+  - name: inheritance
+    ansible.builtin.debug:
+      msg: "{{Inheritance:Course}}"       
