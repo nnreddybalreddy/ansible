@@ -3,10 +3,10 @@
   become: yes
   vars:
     WISHES: "WISHES from play level"
-  vars_prompt:
-    name: WISHES
-    prompt: "Pls enter WISHES from prompt level"
-    private: false
+  # vars_prompt:
+  #   name: WISHES
+  #   prompt: "Pls enter WISHES from prompt level"
+    # private: false
   # vars_files:
   #   vars.yaml
   tasks:
