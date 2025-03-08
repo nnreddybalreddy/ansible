@@ -3,5 +3,5 @@
   become: yes
   tasks:
   - name: vars with pref
-    ansible.builin.debug:
+    ansible.builtin.debug:
       msg: "{{WISHES}}"
