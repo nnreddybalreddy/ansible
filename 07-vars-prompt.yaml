@@ -12,3 +12,4 @@
   - name: vars_prompt
     ansible.builtin.debug:
       msg: "{{USERNAME}} {{PASSWORD}}"
+      
