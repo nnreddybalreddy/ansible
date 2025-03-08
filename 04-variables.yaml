@@ -16,6 +16,11 @@
   vars:
     Course: "DOCKER"
   tasks:
-  - name: variables
+  - name: override
+    vars:
+      Course: "KUBS"
     ansible.builtin.debug:
-      msg: "{{Course}}"
+      msg: "{{Override: Course}}"
+  - name: inheritance
+    ansible.builtin.debug:
+      msg: "{{Inheritance:Course}}"       
