@@ -1,0 +1,7 @@
+- name: args vars
+  hosts: localhost
+  become: yes
+  tasks:
+  - name: args vars
+    ansible.builtin.debug:
+      msg: "Hi args{{TRAINER}}"
