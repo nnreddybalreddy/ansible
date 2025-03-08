@@ -9,7 +9,7 @@
     - ansible
     Exp:
       Devops: 3
-      AWS: 2
+      AWS: 2volts
       Dokcer: 5
     RealProject: true
   tasks:
