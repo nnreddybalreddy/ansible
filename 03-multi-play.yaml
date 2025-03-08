@@ -1,20 +1,43 @@
-- name: play1
+# - name: play1
+#   hosts: localhost
+#   become: yes
+#   tasks:
+#   - name: PLAY-1 and TASK-1
+#     ansible.builtin.debug:
+#       msg: "Hello i m from PLAY-1 and TASK-1"
+#   - name: PLAY-1 and TASK-2
+#     ansible.builtin.debug:
+#       msg: "Hello i m from PLAY-1 and TASK2"
+# - name: PLAY2
+#   hosts: localhost
+#   become: yes
+#   tasks:
+#   - name: PLAY-2 and TASK-1
+#     ansible.builtin.debug:
+#       msg: "Hello i m from PLAY-2 and TASK-1"
+#   - name: PLAY-2 and TASK-2
+#     ansible.builtin.debug:
+#       msg: "Hello i m from PLAY-2 and TASK-2"    
+
+
+- name: play-1
   hosts: localhost
   become: yes
   tasks:
-  - name: PLAY-1 and TASK-1
+  - name: play-1 and task-1
     ansible.builtin.debug:
-      msg: "Hello i m from PLAY-1 and TASK-1"
-  - name: PLAY-1 and TASK-2
+      msg: "PLAY-1 and TASK-1"
+  - name: play-1 and task-1
     ansible.builtin.debug:
-      msg: "Hello i m from PLAY-1 and TASK2"
-- name: PLAY2
+      msg: "PLAY-1 and TASK-2"
+- name: Play-2
   hosts: localhost
   become: yes
   tasks:
-  - name: PLAY-2 and TASK-1
+  - name: play-2 and task-1 
     ansible.builtin.debug:
-      msg: "Hello i m from PLAY-2 and TASK-1"
-  - name: PLAY-2 and TASK-2
+      msg: "PLAY-2 and TASK-1"
+  - name: play-2 and task-2
     ansible.builtin.debug:
-      msg: "Hello i m from PLAY-2 and TASK-2"                
+      msg: "PLAY-2 and TASK-2"                    
+
