@@ -1,5 +1,5 @@
 - name: inventory vars
-  hosts: localhost1
+  hosts: localhost
   become: yes 
   tasks:
   - name: inventory vars
