@@ -1,19 +1,28 @@
-- name: vars
-  hosts: localhost
-  vars:
-    Course: "Ansible"
-    Trainer: "Siva"
-    Duration: 120
-  become: yes
-  tasks:
-  - name: print overrider
-    vars:
-      Course: "Ansible1"
-      Trainer: "Siva1"
-      Duration: 1200 
-    ansible.builtin.debug:
-      msg: "Course::{{Course}} {{Trainer}} {{Duration}}"      
+# - name: vars
+#   hosts: localhost
+#   vars:
+#     Course: "Ansible"
+#     Trainer: "Siva"
+#     Duration: 120
+#   become: yes
+#   tasks:
+#   - name: print overrider
+#     vars:
+#       Course: "Ansible1"
+#       Trainer: "Siva1"
+#       Duration: 1200 
+#     ansible.builtin.debug:
+#       msg: "Course::{{Course}} {{Trainer}} {{Duration}}"      
 
-  - name: print inheritance
-    ansible.builtin.debug:
-      msg: "Course::{{Course}} {{Trainer}} {{Duration}}"    
+#   - name: print inheritance
+#     ansible.builtin.debug:
+#       msg: "Course::{{Course}} {{Trainer}} {{Duration}}"    
+
+- name: vars play
+  hosts: localhost
+  become: yes
+  vars:
+  
+  tasks:
+  - name: vars
+

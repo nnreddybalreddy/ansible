@@ -14,7 +14,7 @@
   hosts: localhost
   become: yes
   vars:
-  - Course: "DOCKER"
+    Course: "DOCKER"
   tasks:
   - name: variables
     ansible.builtin.debug:
