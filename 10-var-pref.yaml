@@ -7,6 +7,8 @@
     name: WISEHS
     prompt: "Pls enter wishes from prompt"
     private: false
+  tasks:
+  - name: "Hello"  
   # vars_files:
   #   vars.yaml    
   # tasks:
