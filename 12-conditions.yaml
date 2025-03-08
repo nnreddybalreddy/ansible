@@ -1,21 +1,32 @@
+# - name: conditions
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: conditions
+#     ansible.builtin.command: id expense
+#     ignore_errors: true
+#     register: USER
+
+#   - name: register
+#     ansible.builtin.debug:
+#       msg: "{{USER}}"
+
+#   - name: create user
+#     ansible.builtin.command: useradd expense
+#     when: USER.rc != 0
+
+
+#   - name: say hello
+#     ansible.builtin.debug:
+#       msg: "Hello"        
+
 - name: conditions
   hosts: web
   become: yes
   tasks:
   - name: conditions
     ansible.builtin.command: id expense
-    ignore_errors: true
-    register: USER
 
-  - name: register
+  - name: hello
     ansible.builtin.debug:
-      msg: "{{USER}}"
-
-  - name: create user
-    ansible.builtin.command: useradd expense
-    when: USER.rc != 0
-
-
-  - name: say hello
-    ansible.builtin.debug:
-      msg: "Hello"        
+      msg: "hello"  
