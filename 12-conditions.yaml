@@ -10,9 +10,10 @@
   - name: register
     ansible.builtin.debug:
       msg: "{{USER}}"
+
   - name: create user
     ansible.builtin.command: useradd expense
-    when USER.rc != 0
+    when: USER.rc != 0
 
 
   - name: say hello
