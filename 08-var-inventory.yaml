@@ -1,7 +1,15 @@
+# - name: inventory vars
+#   hosts: localhost
+#   become: yes 
+#   tasks:
+#   - name: inventory vars
+#     ansible.builtin.debug:
+#       msg: "Hi vars {{Course}}"
+
 - name: inventory vars
   hosts: localhost
-  become: yes 
+  become: yes
   tasks:
-  - name: inventory vars
+  - name: inventory
     ansible.builtin.debug:
-      msg: "Hi vars {{Course}}"
+      msg: "{{Course}}"
