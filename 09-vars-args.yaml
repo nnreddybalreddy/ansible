@@ -1,7 +1,15 @@
-- name: args vars
+# - name: args vars
+#   hosts: localhost
+#   become: yes
+#   tasks:
+#   - name: args vars
+#     ansible.builtin.debug:
+#       msg: "Hi args{{TRAINER}}"
+
+- name: var args
   hosts: localhost
   become: yes
   tasks:
   - name: args vars
     ansible.builtin.debug:
-      msg: "Hi args{{TRAINER}}"
+      msg: "{{TRAINER}}"
