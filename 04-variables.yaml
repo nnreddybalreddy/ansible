@@ -3,7 +3,7 @@
   vars:
     course: "Ansible"
     Trainer: "Sivakumar"
-    Duration: "120hrs"
+    Duration: 120hr
   become: yes
   tasks:
   - name: print information
