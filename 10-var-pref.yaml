@@ -8,7 +8,7 @@
     prompt: "Pls enter WISHES from prompt level"
     private: false
   vars_files:
-    var.yaml
+    vars.yaml
   tasks:
   - name: vars with pref
     ansible.builtin.debug:
