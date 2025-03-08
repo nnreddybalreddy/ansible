@@ -7,8 +7,8 @@
     name: WISHES
     prompt: "Pls enter WISHES from prompt level"
     private: false
-  vars_files:
-    vars.yaml
+  # vars_files:
+  #   vars.yaml
   tasks:
   - name: vars with preg
     # vars:
