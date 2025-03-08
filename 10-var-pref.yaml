@@ -7,11 +7,11 @@
     name: WISEHS
     prompt: "Pls enter wishes from prompt"
     private: false
-  vars_files:
-    vars.yaml    
-  tasks:
-  - name: var preg
-    vars:
-      WISEHS: "vars from task level"
-    ansible.builtin.debug:
-      msg: "{{WISHES}}"  
+  # vars_files:
+  #   vars.yaml    
+  # tasks:
+  # - name: var preg
+  #   vars:
+  #     WISEHS: "vars from task level"
+  #   ansible.builtin.debug:
+  #     msg: "{{WISHES}}"  
