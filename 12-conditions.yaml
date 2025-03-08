@@ -39,4 +39,5 @@
 
   - name: id expense
     ansible.builtin.command: id expense
+    when USER.rc != 0
 
