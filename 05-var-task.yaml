@@ -6,7 +6,7 @@
     Duration: 120
   become: yes
   tasks:
-  - name: vars
+  - name: print overrider
     vars:
       Course: "Ansible1"
       Trainer: "Siva1"
@@ -14,6 +14,6 @@
     ansible.builtin.debug:
       msg: "Course::{{Course}} {{Trainer}} {{Duration}}"      
 
-  - name: vars2
+  - name: print inheritance
     ansible.builtin.debug:
       msg: "Course::{{Course}} {{Trainer}} {{Duration}}"    
