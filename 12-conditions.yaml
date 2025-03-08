@@ -26,6 +26,7 @@
   tasks:
   - name: conditions
     ansible.builtin.command: id expense
+    ignore_errors: true
 
   - name: hello
     ansible.builtin.debug:
