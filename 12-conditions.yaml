@@ -9,7 +9,7 @@
 
   - name: register
     ansible.builtin.debug:
-      msg: "{{USER}}"" 
+      msg: "{{USER}}" 
 
   - name: say hello
     ansible.builtin.debug:
