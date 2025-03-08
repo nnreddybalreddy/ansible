@@ -10,6 +10,9 @@
   vars_files:
     vars.yaml
   tasks:
-  - name: vars with pref
+  - name: vars with preg
+    vars:
+      WISHES: "{{vars from task level}}"
     ansible.builtin.debug:
-      msg: "{{WISHES}}"
+      msg: "{{WISHES}}"  
+  
