@@ -6,13 +6,13 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course | default('Ansible')}}"
 
-- name: default
-  hosts: localhost
-  become: no
-  tasks:
-  - name: default
-    ansible.builtin.debug:
-      msg: "{{Course | default('Ansible')}}"
+# - name: default
+#   hosts: localhost
+#   become: no
+#   tasks:
+#   - name: default
+#     ansible.builtin.debug:
+#       msg: "{{Course | default('Ansible')}}"
 
 # - name: default
 #   hosts: localhost
@@ -23,6 +23,17 @@
 #   - name: lower
 #     ansible.builtin.debug:
 #       msg: "{{ greetings | lower }}"
+
+- name: lower
+  hosts: localhost
+  become: yes
+  vars:
+  - greeetings: "Hi from play level"
+  tasks:
+  - name: lower
+    ansible.builtin.debug:
+      msg: "{{greetings | lower}}"
+
 
 # - name: default
 #   hosts: localhost
