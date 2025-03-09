@@ -1,50 +1,67 @@
-- name: default
-  hosts: localhost
-  become: no
-  tasks:
-  - name: default
-    ansible.builtin.debug:
-      msg: "{{Course | default('Ansible')}}"
+# - name: default
+#   hosts: localhost
+#   become: no
+#   tasks:
+#   - name: default
+#     ansible.builtin.debug:
+#       msg: "{{Course | default('Ansible')}}"
 
-- name: default
+# - name: default
+#   hosts: localhost
+#   become: no
+#   vars:
+#   - greetings: "Good morning"
+#   tasks:
+#   - name: lower
+#     ansible.builtin.debug:
+#       msg: "{{ greetings | lower }}"
+
+# - name: default
+#   hosts: localhost
+#   become: no
+#   vars:
+#   - greetings: "Good morning"
+#   tasks:
+#   - name: lower
+#     ansible.builtin.debug:
+#       msg: "{{ greetings | upper }}"  
+
+# - name: dups
+#   hosts: localhost
+#   become: no
+#   vars:
+#   - numbers: [1,1,2,3,3,4,4,5,5]
+#   tasks:
+#   - name: dups
+#     ansible.builtin.debug:
+#       msg: "{{numbers | unique}}"   
+
+# - name: dups
+#   hosts: localhost
+#   become: no
+#   vars:
+#   - numbers: [1,1,2,3,3,4,4,5,5]
+#   tasks:
+#   - name: dups
+#     ansible.builtin.debug:
+#       msg: "min: {{numbers | min}}, max:: {{numbers | max}}"     
+
+- name: dict2items
   hosts: localhost
   become: no
   vars:
-  - greetings: "Good morning"
+    my_dict: 
+     course: "docker"
+     trainer: "nnr"
   tasks:
-  - name: lower
+  - name: dict2items
     ansible.builtin.debug:
-      msg: "{{ greetings | lower }}"
+      msg: "before dict {{my_dict}}"
+  - name: dict2items
+    ansible.builtin.debug:
+      msg: "After dict {{my_dict}}"    
 
-- name: default
-  hosts: localhost
-  become: no
-  vars:
-  - greetings: "Good morning"
-  tasks:
-  - name: lower
-    ansible.builtin.debug:
-      msg: "{{ greetings | upper }}"  
 
-- name: dups
-  hosts: localhost
-  become: no
-  vars:
-  - numbers: [1,1,2,3,3,4,4,5,5]
-  tasks:
-  - name: dups
-    ansible.builtin.debug:
-      msg: "{{numbers | unique}}"   
-
-- name: dups
-  hosts: localhost
-  become: no
-  vars:
-  - numbers: [1,1,2,3,3,4,4,5,5]
-  tasks:
-  - name: dups
-    ansible.builtin.debug:
-      msg: "min: {{numbers | min}}, max:: {{numbers | max}}"     
 
        
       
