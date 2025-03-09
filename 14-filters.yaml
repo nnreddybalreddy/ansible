@@ -6,6 +6,14 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course | default('Ansible')}}"
 
+- name: default
+  hosts: localhost
+  become: no
+  tasks:
+  - name: default
+    ansible.builtin.debug:
+      msg: "{{Course | default('Ansible')}}"
+
 # - name: default
 #   hosts: localhost
 #   become: no
