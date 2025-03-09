@@ -32,7 +32,7 @@
   tasks:
   - name: lower
     ansible.builtin.debug:
-      msg: "{{greetings | lower}}"
+      msg: "{{ greeetings | lower}}"
 
 
 # - name: default
