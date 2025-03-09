@@ -20,24 +20,36 @@
 #     ansible.builtin.debug:
 #       msg: "Hello"        
 
-- name: conditions
-  hosts: web
-  become: yes
+# - name: conditions
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: conditions
+#     ansible.builtin.command: id expense
+#     ignore_errors: true
+#     register: USER
+
+#   - name: hello
+#     ansible.builtin.debug:
+#       msg: "hello"
+
+#   - name: user info
+#     ansible.builtin.debug:
+#       msg: "{{USER}}"
+
+#   - name: id expense
+#     ansible.builtin.command: useradd expense
+#     when: USER.rc != 0
+- name: id user
+  hosts: localhost
+  become: no
   tasks:
-  - name: conditions
+  - name: id user
     ansible.builtin.command: id expense
-    ignore_errors: true
-    register: USER
 
   - name: hello
     ansible.builtin.debug:
-      msg: "hello"
+      msg: "Hello"  
+      
 
-  - name: user info
-    ansible.builtin.debug:
-      msg: "{{USER}}"
-
-  - name: id expense
-    ansible.builtin.command: useradd expense
-    when: USER.rc != 0
 
