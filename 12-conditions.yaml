@@ -43,7 +43,7 @@
 
 - name: id user
   hosts: localhost
-  become: no
+  become: yes
   tasks:
   - name: id user
     ansible.builtin.command: id expense
