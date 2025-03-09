@@ -34,5 +34,18 @@
   tasks:
   - name: dups
     ansible.builtin.debug:
-      msg: "{{numbers | unique}}"               
+      msg: "{{numbers | unique}}"   
+
+- name: dups
+  hosts: localhost
+  become: no
+  vars:
+  - numbers: [1,1,2,3,3,4,4,5,5]
+  tasks:
+  - name: dups
+    ansible.builtin.debug:
+      msg: "{{numbers | min}}"       
+      msg: "{{numbers | max}}"          
+
+
 
