@@ -75,20 +75,32 @@
 #     ansible.builtin.debug:
 #       msg: "min: {{numbers | min}}, max:: {{numbers | max}}"     
 
+# - name: dict2items
+#   hosts: localhost
+#   become: no
+#   vars:
+#     my_dict: 
+#      course: "docker"
+#      trainer: "nnr"
+#   tasks:
+#   - name: dict2items
+#     ansible.builtin.debug:
+#       msg: "before dict {{my_dict}}"
+#   - name: dict2items
+#     ansible.builtin.debug:
+#       msg: "After dict {{my_dict| dict2items }}"  
+
 - name: dict2items
   hosts: localhost
-  become: no
+  become: yes
   vars:
-    my_dict: 
-     course: "docker"
-     trainer: "nnr"
+    my_dict:
+      course: "docker"
+      trainer: "nnr"
   tasks:
-  - name: dict2items
+  - name: dict
     ansible.builtin.debug:
-      msg: "before dict {{my_dict}}"
-  - name: dict2items
-    ansible.builtin.debug:
-      msg: "After dict {{my_dict| dict2items }}"  
+      msg: "{{my_dict| dict2items}}"
 
 - name: items2dict
   hosts: localhost
