@@ -13,7 +13,7 @@
 #     - { name: 'postfix', state: 'absent'}    
 
 - name: install
-  hosts: localhost
+  hosts: web
   become: yes
   tasks:
   - name: install
