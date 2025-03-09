@@ -1,0 +1,28 @@
+- name: default
+  hosts: localhost
+  become: no
+  tasks:
+  - name: default
+    ansible.builtin.debug:
+      msg: {{Course | default('Ansible')}}
+
+- name: default
+  hosts: localhost
+  become: no
+  vars:
+  - greetings: "Good morning"
+  tasks:
+  - name: lower
+    ansible.builtin.debug:
+      msg: {{ greetings | lower }}      
+
+- name: default
+  hosts: localhost
+  become: no
+  vars:
+  - greetings: "Good morning"
+  tasks:
+  - name: lower
+    ansible.builtin.debug:
+      msg: {{ greetings | upper }}      
+
