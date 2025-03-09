@@ -1,11 +1,23 @@
+# - name: Loops
+#   hosts: localhost
+#   become: no
+#   tasks: 
+#   - name: Loops
+#     ansible.builtin.debug:
+#       msg: "Hello {{item}}"
+#     loop:
+#     - ansible
+#     - linux
+#     - docker  
+
 - name: Loops
   hosts: localhost
-  become: no
-  tasks: 
+  become: yes
+  tasks:
   - name: Loops
     ansible.builtin.debug:
-      msg: "Hello {{item}}"
-    loop:
+      msg: "{{item}}"
+    loops:
     - ansible
-    - linux
-    - docker  
+    - docker
+    - kubs  
