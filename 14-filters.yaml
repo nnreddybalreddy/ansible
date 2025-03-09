@@ -63,7 +63,7 @@
   tasks:
   - name: dups
     ansible.builtin.debug:
-      msg: "{{numbers|unique}}"
+      msg: "{{numbers|unique}} min: {{numbers|min}}"
 
 # - name: dups
 #   hosts: localhost
