@@ -44,7 +44,7 @@
   tasks:
   - name: dups
     ansible.builtin.debug:
-      msg: "{{numbers | min}}"       
+      msg: "min: {{numbers | min}}"       
       msg: "{{numbers | max}}"          
 
 
