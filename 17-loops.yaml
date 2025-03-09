@@ -22,5 +22,5 @@
       state: "{{item.state}}"
 
     loop:
-    - {name: "mysql" , state: "absebt"}
+    - {name: "mysql" , state: "absent"}
     - {name: "nginx", state: "latest"}  
