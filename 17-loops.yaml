@@ -1,0 +1,11 @@
+- name: packages
+  hosts: web
+  become: yes
+  tasks:
+  - name: packages
+    ansible.builtin.dnf:
+
+    loop:
+    - { name: 'mysql', state: 'latest'}
+    - { name: 'nginx', state: 'absent'}
+    - { name: 'postfix', state: 'absent'}    
