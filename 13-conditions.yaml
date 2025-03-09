@@ -1,16 +1,29 @@
-- name: conditions
+# - name: conditions
+#   hosts: localhost
+#   become: yes
+#   vars_prompt:
+#   - name: number
+#     prompt: "Enter number:::"
+#     private: false
+#   tasks:
+#   - name: number > 
+#     ansible.builtin.debug:
+#       msg: "{{number}} greater  or equal  10"
+#     when: number | int >= 10
+#   - name: number < 
+#     ansible.builtin.debug:
+#       msg: "{{number}} less than"
+#     when: number | int < 10   
+
+- name: number
   hosts: localhost
-  become: yes
+  become: no
   vars_prompt:
   - name: number
-    prompt: "Enter number:::"
+    prompt: "Enter num"
     private: false
   tasks:
-  - name: number > 
+  - name: number
     ansible.builtin.debug:
-      msg: "{{number}} greater  or equal  10"
-    when: number | int >= 10
-  - name: number < 
-    ansible.builtin.debug:
-      msg: "{{number}} less than"
-    when: number | int < 10    
+      msg: "{{number}} greater than 10"
+      when: number >= 10
