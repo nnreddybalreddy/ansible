@@ -61,7 +61,7 @@
     ansible.builtin.debug:
       msg: "After dict {{my_dict| dict2items }}"  
 
-- name: dict2items
+- name: items2dict
   hosts: localhost
   become: no
   vars:

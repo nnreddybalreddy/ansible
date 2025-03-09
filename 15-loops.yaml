@@ -1,0 +1,11 @@
+- name: Loops
+  hosts: localhost
+  become: no
+  tasks: 
+  - name: Loops
+    ansible.builtin.debug:
+      msg: "Hello {{items}}"
+    loop:
+    - ansible
+    - linux
+    - docker  
