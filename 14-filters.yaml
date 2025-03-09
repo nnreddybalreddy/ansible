@@ -24,15 +24,15 @@
 #     ansible.builtin.debug:
 #       msg: "{{ greetings | lower }}"
 
-- name: lower
-  hosts: localhost
-  become: yes
-  vars:
-  - greeetings: "Hi from play level"
-  tasks:
-  - name: lower
-    ansible.builtin.debug:
-      msg: "{{ greeetings | lower}}"
+# - name: lower
+#   hosts: localhost
+#   become: yes
+#   vars:
+#   - greeetings: "Hi from play level"
+#   tasks:
+#   - name: lower
+#     ansible.builtin.debug:
+#       msg: "{{ greeetings | lower}}"
 
 
 # - name: default
@@ -54,6 +54,16 @@
 #   - name: dups
 #     ansible.builtin.debug:
 #       msg: "{{numbers | unique}}"   
+
+- name: dups
+  hosts: localhost
+  become: yes
+  vars:
+  - numbers: [1,1,2,2,3,3,4,4,5,5]
+  tasks:
+  - name: dups
+    ansible.builtin.debug:
+      msg: "{{numbers|unique}}"
 
 # - name: dups
 #   hosts: localhost
