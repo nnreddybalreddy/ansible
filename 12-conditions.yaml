@@ -50,9 +50,9 @@
     ignore_errors: true
     register: USER
 
-  # - name: hello
-  #   ansible.builtin.debug:
-  #     msg: "Hello"  
+  - name: hello
+    ansible.builtin.debug:
+      msg: "Hello"  
 
   # - name: print user
   #   ansible.builtin.debug:
