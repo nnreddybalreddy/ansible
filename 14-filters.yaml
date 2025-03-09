@@ -90,32 +90,32 @@
 #     ansible.builtin.debug:
 #       msg: "After dict {{my_dict| dict2items }}"  
 
-- name: dict2items
-  hosts: localhost
-  become: yes
-  vars:
-    my_dict:
-      course: "docker"
-      trainer: "nnr"
-  tasks:
-  - name: dict
-    ansible.builtin.debug:
-      msg: "{{my_dict| dict2items}}"
-
-# - name: items2dict
+# - name: dict2items
 #   hosts: localhost
-#   become: no
+#   become: yes
 #   vars:
-#     my_list: 
-#     - {'key': 'course', 'value': 'docker'}
-#     - {'key': 'trainer', 'value': 'nnr'}
+#     my_dict:
+#       course: "docker"
+#       trainer: "nnr"
 #   tasks:
-#   - name: dict2items
+#   - name: dict
 #     ansible.builtin.debug:
-#       msg: "before dict {{my_list}}"
-#   - name: dict2items
-#     ansible.builtin.debug:
-#       msg: "After dict {{my_list| items2dict }}"  
+#       msg: "{{my_dict| dict2items}}"
+
+- name: items2dict
+  hosts: localhost
+  become: no
+  vars:
+    my_list: 
+    - {'key': 'course', 'value': 'docker'}
+    - {'key': 'trainer', 'value': 'nnr'}
+  tasks:
+  - name: dict2items
+    ansible.builtin.debug:
+      msg: "before dict {{my_list}}"
+  - name: dict2items
+    ansible.builtin.debug:
+      msg: "After dict {{my_list| items2dict }}"  
 
 
 
