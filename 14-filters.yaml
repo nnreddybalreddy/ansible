@@ -59,7 +59,23 @@
       msg: "before dict {{my_dict}}"
   - name: dict2items
     ansible.builtin.debug:
-      msg: "After dict {{my_dict| dict2items }}"    
+      msg: "After dict {{my_dict| dict2items }}"  
+
+- name: dict2items
+  hosts: localhost
+  become: no
+  vars:
+    my_list: 
+    - {'key': 'course', 'value': 'docker'}
+    - {'key': 'trainer', 'value': 'nnr'}
+  tasks:
+  - name: dict2items
+    ansible.builtin.debug:
+      msg: "before dict {{my_list}}"
+  - name: dict2items
+    ansible.builtin.debug:
+      msg: "After dict {{my_list| items2dict }}"  
+
 
 
 
