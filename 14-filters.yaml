@@ -14,7 +14,7 @@
   tasks:
   - name: lower
     ansible.builtin.debug:
-      msg: {{ greetings | lower }}      
+      msg: "{{ greetings | lower }}"
 
 - name: default
   hosts: localhost
@@ -24,5 +24,15 @@
   tasks:
   - name: lower
     ansible.builtin.debug:
-      msg: {{ greetings | upper }}      
+      msg: "{{ greetings | upper }}"  
+
+- name: dups
+  hosts: localhost
+  become: no
+  vars:
+  - numbers: [1,1,2,3,3,4,4,5,5]
+  tasks:
+  - name: dups
+    ansible.builtin.debug:
+      msg: "{{numbers | unique}}"               
 
