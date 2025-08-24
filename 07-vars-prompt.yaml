@@ -30,7 +30,7 @@
   vars_prompt:
   - name: Course 
     prompt: "Pls enter course"
-    private: no 
+    private: yes
   become: yes 
   tasks: 
   - name: print vars prompt 
