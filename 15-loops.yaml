@@ -10,14 +10,27 @@
 #     - linux
 #     - docker  
 
-- name: Loops
-  hosts: localhost
+# - name: Loops
+#   hosts: localhost
+#   become: yes
+#   tasks:
+#   - name: Loops
+#     ansible.builtin.debug:
+#       msg: "{{item}}"
+#     loop:
+#     - ansible
+#     - docker
+#     - kubs  
+
+- name: Loop
+  hosts: web
   become: yes
   tasks:
-  - name: Loops
+  - name: loops 
     ansible.builtin.debug:
       msg: "{{item}}"
     loop:
-    - ansible
-    - docker
+    - nginx 
+    - docker 
+    - ansible 
     - kubs  
