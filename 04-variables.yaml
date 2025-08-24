@@ -20,18 +20,15 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course}}"      
 
-- name: variabels 
-  hosts: localhost 
-  become: yes 
+- name: var 
+  hosts: web
+  become: yes
   vars:
-    COURSE: "Ansible"
-    TRAINER: "NNR"
-    FEE: "5$"
-  tasks:
-  - name: variables 
+    trainer: "NNR"
+  tasks: 
+  - name: vars print
     ansible.builtin.debug:
-      msg: "This is the course: {{COURSE}}"
-
+      msg: "{{trainer}}" 
 
 
 
