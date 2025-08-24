@@ -17,22 +17,19 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course}} {{tools}} {{Exp}} {{RealProject}}"
 
-- name: data type
-  hosts: web
-  become: no
+- name: datatype 
+  hosts: web 
+  become: yes 
   vars:
-    COURSE: "DOcker"
-    tools:
-    - linux 
+    Course: "DOcker"
+    list1: 
+    - docker 
     - kubs 
-    - robo
-    exp:
-      ansible: 2 
-      linux: 5
-      kubs: 8
-    Project: True   
-
+    dict1:
+      trainer: "NNR8"
+      course: "NNR10"
+    proj: True  
   tasks: 
-  - name: vars 
+  - name: datatype 
     ansible.builtin.debug:
-      msg: "{{COURSE}} {{tools}} {{exp}} {{Project}}"
+      msg: "{{Course}} {{list1}} {{dict1}} {{proj}}"
