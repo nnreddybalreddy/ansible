@@ -33,15 +33,27 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course}}"     
 
-- name: vars
-  hosts: web
+# - name: vars
+#   hosts: web
+#   become: yes
+#   vars:
+#   - course: "Docker"
+#   tasks:
+#   - name: print
+#     vars:
+#     - course: "Kubs"
+#     ansible.builtin.debug:  
+#       msg:"{{course}}" 
+
+- name: varplay
+  hosts: localhost 
   become: yes
   vars:
-  - course: "Docker"
+    Course: "Ansible-1" 
   tasks:
-  - name: print
+  - name: variable play 
     vars:
-    - course: "Kubs"
-    ansible.builtin.debug:  
-      msg:"{{course}}" 
+      Course1: "Ansible-2"
+    ansible.builtin.debug:
+      msg: "{{Course1}}"
 
