@@ -22,15 +22,13 @@
 #     - docker
 #     - kubs  
 
-- name: Loop
-  hosts: web
+- name: loop
+  hosts: web 
   become: yes
-  tasks:
-  - name: loops 
-    ansible.builtin.debug:
+  tasks: 
+  - name: print 
+    ansible.builtin.command:
       msg: "{{item}}"
     loop:
-    - nginx 
-    - docker 
     - ansible 
-    - kubs  
+    - docker     
