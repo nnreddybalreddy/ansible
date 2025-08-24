@@ -11,13 +11,24 @@
 #     - nginx
 #     - postfix
 
-- name: install
-  hosts: localhost
+# - name: install
+#   hosts: localhost
+#   become: yes
+#   tasks: 
+#   - name: loops
+#     ansible.builtin.dnf:
+#       name: "{{item}}"
+#       state: latest
+#     loop:
+#     - mysql  
+
+- name: install 
+  hosts: web 
   become: yes
-  tasks: 
-  - name: loops
+  tasks:
+  - name: loops 
     ansible.builtin.dnf:
       name: "{{item}}"
-      state: latest
+      state: latest 
     loop:
     - mysql  
