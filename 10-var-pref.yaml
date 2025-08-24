@@ -21,10 +21,10 @@
   become: yes
   vars:
     WISHES: "Play level wishes"
-  vars_prompt:
-    name: WISHES 
-    prompt: "Pls enter wishes prompt"
-    private: false 
+  # vars_prompt:
+  #   name: WISHES 
+  #   prompt: "Pls enter wishes prompt"
+  #   private: false 
   # vars_files:
   #   vars.yaml 
 
