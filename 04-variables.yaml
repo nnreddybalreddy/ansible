@@ -24,7 +24,7 @@
   hosts: web
   become: yes
   vars:
-    trainer: "NNR"
+    trainer: "NNR8"
   tasks: 
   - name: vars print
     ansible.builtin.debug:
