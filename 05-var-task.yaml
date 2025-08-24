@@ -18,77 +18,17 @@
 #     ansible.builtin.debug:
 #       msg: "Course::{{Course}} {{Trainer}} {{Duration}}"    
 
-# - name: vars
-#   hosts: localhost
-#   become: yes
-#   vars:
-#     Course: "Docker"
-#   tasks:
-#   - name: Override
-#     vars:
-#       Course: "Kubs"
-#     ansible.builtin.debug:
-#       msg: "{{Course}}"
-#   - name: Inheritance
-#     ansible.builtin.debug:
-#       msg: "{{Course}}"     
-
-# - name: vars
-#   hosts: web
-#   become: yes
-#   vars:
-#   - course: "Docker"
-#   tasks:
-#   - name: print
-#     vars:
-#     - course: "Kubs"
-#     ansible.builtin.debug:  
-#       msg:"{{course}}" 
-
-# - name: varplay
-#   hosts: localhost 
-#   become: yes
-#   vars:
-#     Course: "Ansible-1" 
-#   tasks:
-#   - name: variable play 
-#     vars:
-#       Course: "Ansible-2"
-#     ansible.builtin.debug:
-#       msg: "{{Course}}"
-#   - name: playlevel
-#     ansible.builtin.debug:
-#       msg: "{{Course}}"   
-
-# - name: variables 
-#   hosts: localhost 
-#   become: yes
-#   vars:
-#     Course: "Ansible-1" 
-#   tasks:
-#   - name: Task level 
-#     vars:
-#       Course: "Ansible-2"
-#     ansible.builtin.debug:
-#       msg: "{{Course}}"
-#   - name:  Play level variables 
-#     ansible.builtin.debug:
-#       msg: "{{Course}}"   
-
-
-- name: variables 
-  hosts: localhost 
-  become: yes
+- name: vars 
+  hosts: web 
+  become: yes 
   vars:
-    Course: "Docker"
+    Course: "Ansible1"
   tasks:
-  - name: task level 
-    vars: 
-      Course: "Ansible-2"
+  - name: vars task print 
+    vars:
+      Course: "DOcker"
     ansible.builtin.debug:
-      msg: "{{Course}}"
-  - name: play level 
-    ansible.builtin.debug: 
-      msg: "{{Course}}"
-
-
+      msg: "override: {{Course}}"
+  - name: vars print 
+    ansible.builtin.debug:
+      msg: "Inherit: {{Course}}"      
