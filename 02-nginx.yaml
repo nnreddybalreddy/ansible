@@ -45,15 +45,16 @@
   hosts: web
   become: yes 
   tasks: 
-  - name: install  and run nginx 
+  - name: install 
     ansible.builtin.dnf:
       name: nginx 
       state: latest 
-    ansible.builtin.service:
-      name: nginx
+  - name: start nginx 
+    ansible.builtin.system:
+      name: nginx 
       state: started 
-      enabled: yes 
-        
+      enabled: yes
+
         
       
 
