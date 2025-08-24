@@ -2,8 +2,8 @@
   hosts: localhost
   become: no
   vars:
-    Course: "PLay Level"
+    numbers: [1,1,2,3,3,4,4,5,5]
   tasks:
   - name: default
     ansible.builtin.debug:
-      msg: "{{Course | lower}}"
+      msg: "{{numbers | unique}}"
