@@ -41,23 +41,35 @@
 #       enabled: yes    
 
 
-- name: install and run the nginx 
-  hosts: web
-  become: yes 
-  tasks: 
-  - name: install 
-    ansible.builtin.dnf:
-      name: nginx 
-      state: latest 
-  - name: run 
-    ansible.builtin.service:
-      name: nginx
-      state: started
-      enabled: yes
+# - name: install and run the nginx 
+#   hosts: web
+#   become: yes 
+#   tasks: 
+#   - name: install 
+#     ansible.builtin.dnf:
+#       name: nginx 
+#       state: latest 
+#   - name: run 
+#     ansible.builtin.service:
+#       name: nginx
+#       state: started
+#       enabled: yes
 
         
       
-
+- name: intssall and run the nginx 
+  hosts: web
+  become: yes
+  tasks:
+  - name: install nginx 
+    ansible.builtin.dnf:
+      name: nginx
+      state: latest 
+    ansible.builtin.service:
+      name: nginx
+      state: started 
+      enabled: yes
+          
 
 
     
