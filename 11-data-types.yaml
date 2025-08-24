@@ -17,21 +17,21 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course}} {{tools}} {{Exp}} {{RealProject}}"
 
-- name: datatypes
-  hosts: localhost
+- name: data type
+  hosts: web
   become: no
   vars:
-  - Course: "Linux"
+    COURSE: "DOcker"
     tools:
-    - ansible
-    - dockr
-    - kubernetes
+    - linux 
+    - kubs 
+    - robo
     exp:
-      devops: 2
-      aws: 5
-      kubs: 6
-    realproj: true  
-  tasks:
-  - name: datatypes
+      ansible: 2 
+      linux: 5
+      kubs: 8
+
+  tasks: 
+  - name: vars 
     ansible.builtin.debug:
-      msg: "{{Course}} {{tools}} {{exp}} {{realproj}}"
+      msg: "{{}}"

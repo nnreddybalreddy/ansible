@@ -29,8 +29,8 @@
     vars.yaml     
   tasks:
   - name: vars pref
-    vars:
-      WISHES: "TASK "
+    # vars:
+    #   WISHES: "TASK "
     ansible.builtin.debug:
       msg: "{{WISHES}}" 
 
