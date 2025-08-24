@@ -27,7 +27,7 @@
   become: yes
   tasks: 
   - name: print 
-    ansible.builtin.command:
+    ansible.builtin.debug:
       msg: "{{item}}"
     loop:
     - ansible 
