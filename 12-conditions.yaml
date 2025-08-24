@@ -41,26 +41,18 @@
 #     ansible.builtin.command: useradd expense
 #     when: USER.rc != 0
 
-- name: id user
-  hosts: localhost
-  become: yes
+- name: conditions 
+  hosts: web 
+  become: yes 
   tasks:
-  - name: id user
-    ansible.builtin.command: id expense
-    ignore_errors: true
-    register: USER
+  - name: conditions 
+    ansible.builtin.command: id expense 
+    ignore_errors: true 
+    register: USER 
 
-  - name: hello
-    ansible.builtin.debug:
-      msg: "Hello"  
-
-  - name: print user
-    ansible.builtin.debug:
-      msg: "{{USER.rc}}"
-
-  - name: id user
-    ansible.builtin.command: useradd expense
-    when: USER.rc != 0        
+  - name: print 
+    ansible.builtin.debug: 
+      msg: "{{USER}}"       
       
 
 
