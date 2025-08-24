@@ -25,15 +25,14 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course}}"
 
-- name: vars prompt 
-  hosts: localhost 
-  vars_prompt:
-  - name: Course 
-    prompt: "Pls enter course"
-    private: yes
+- name: prompt 
+  hosts: web 
   become: yes 
-  tasks: 
-  - name: print vars prompt 
+  vars_prompt:
+    name: Course 
+    prompt: "Please enter"
+    private: no
+  tasks:
+  - name: vars 
     ansible.builtin.debug:
-      msg: "{{Course}}"  
-
+      msg: "{{Course}}"
