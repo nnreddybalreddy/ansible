@@ -7,12 +7,22 @@
 #     ansible.builtin.debug:
 #       msg: "Hi, we are learning {{Course}}"
 
+# - name: var files
+#   hosts: localhost
+#   become: yes
+#   vars_files:
+#     vars.yaml
+#   tasks:
+#   - name: files
+#     ansible.builtin.debug:
+#       msg: "{{Course}}"
+
 - name: var files
-  hosts: localhost
-  become: yes
+  hosts: web
+  become: yes 
   vars_files:
-    vars.yaml
+    vars.yaml 
   tasks:
-  - name: files
+  - name: var files 
     ansible.builtin.debug:
       msg: "{{Course}}"
