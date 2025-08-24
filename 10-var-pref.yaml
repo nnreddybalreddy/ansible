@@ -16,24 +16,23 @@
 #     ansible.builtin.debug:
 #       msg: "{{WISHES}}"  
 
-- name: vars_pref 
-  hosts: localhost
-  become: yes
-  # vars:
-  #   WISHES: "Play level wishes"
-  # vars_prompt:
-  #   name: WISHES 
-  #   prompt: "Pls enter wishes prompt"
-  #   private: false 
-  # vars_files:
-  #   vars.yaml 
-
-  tasks: 
-  - name: vars_pref 
-    # vars:
-    #   WISHES: "task level wishes"
+- name: vars pref 
+  hosts: web 
+  become: yes 
+  vars:
+    WISHES: "Play"
+  vars_prompt:
+    name: WISHES 
+    prompt: "Hello"
+    private: no
+  vars_files:
+    vars.yaml     
+  tasks:
+  - name: vars pref
+    vars:
+      WISHES: "TASK "
     ansible.builtin.debug:
-      msg: "{{WISHES}}"  
+      msg: "{{WISHES}}" 
 
 
   
