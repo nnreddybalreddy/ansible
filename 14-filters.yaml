@@ -1,6 +1,8 @@
 - name: default
   hosts: localhost
   become: no
+  vars:
+    Course: "PLay Level"
   tasks:
   - name: default
     ansible.builtin.debug:
