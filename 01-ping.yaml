@@ -11,11 +11,18 @@
 #   - name: ping the server
 #     ping:
 
-- name : ping the server
+# - name : ping the server
+#   hosts: web
+#   tasks:
+#   - name: ping the server 
+#     ansible.builting.ping:
+
+
+- name: ping the server
   hosts: web
   tasks:
   - name: ping the server 
-    ansible.builting.ping:
+    ansible.builtin.ping:
 
 
 
