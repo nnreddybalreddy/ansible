@@ -6,10 +6,18 @@
 #     ansible.builtin.debug:
 #       msg: "Hi vars {{Course}}"
 
-- name: inventory vars
-  hosts: localhost
-  become: yes
+# - name: inventory vars
+#   hosts: localhost
+#   become: yes
+#   tasks:
+#   - name: inventory
+#     ansible.builtin.debug:
+#       msg: "{{Course}}"
+
+- name: inventory vars 
+  hosts: localhost 
+  become: yes 
   tasks:
-  - name: inventory
+  - name: inventory 
     ansible.builtin.debug:
       msg: "{{Course}}"
