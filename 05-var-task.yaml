@@ -56,4 +56,7 @@
       Course: "Ansible-2"
     ansible.builtin.debug:
       msg: "{{Course}}"
+  - name: playlevel
+    ansible.builtin.debug:
+      msg: "{{Course}}"      
 
