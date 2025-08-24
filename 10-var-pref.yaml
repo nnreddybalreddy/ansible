@@ -1,18 +1,39 @@
-- name: vars with preg
-  hosts: localhost
+# - name: vars with preg
+#   hosts: localhost
+#   become: yes
+#   vars:
+#     WISHES: "WISHES from play level"
+#   # vars_prompt:
+#   #   name: WISHES
+#   #   prompt: "Pls enter WISHES from prompt level"
+#   #   private: false
+#   vars_files:
+#     vars.yaml
+#   tasks:
+#   - name: vars with preg
+#     vars:
+#       WISHES: "vars from task level"
+#     ansible.builtin.debug:
+#       msg: "{{WISHES}}"  
+
+- name: vars_pref 
+  hosts: web
   become: yes
   vars:
-    WISHES: "WISHES from play level"
-  # vars_prompt:
-  #   name: WISHES
-  #   prompt: "Pls enter WISHES from prompt level"
-  #   private: false
+    WISHES: "Play level wishes"
+  vars_prompt:
+    name: WISHES 
+    prompt: "Pls enter wishes prompt"
+    private: false 
   vars_files:
-    vars.yaml
-  tasks:
-  - name: vars with preg
+    vars.yaml 
+
+  tasks: 
+  - name: vars_pref 
     vars:
-      WISHES: "vars from task level"
+      WISHES: "task level wishes"
     ansible.builtin.debug:
       msg: "{{WISHES}}"  
+
+
   
