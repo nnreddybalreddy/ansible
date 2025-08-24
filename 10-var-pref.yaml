@@ -17,7 +17,7 @@
 #       msg: "{{WISHES}}"  
 
 - name: vars_pref 
-  hosts: web
+  hosts: localhost
   become: yes
   # vars:
   #   WISHES: "Play level wishes"
