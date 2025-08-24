@@ -30,8 +30,9 @@
       ansible: 2 
       linux: 5
       kubs: 8
+    Project: True   
 
   tasks: 
   - name: vars 
     ansible.builtin.debug:
-      msg: "{{}}"
+      msg: "{{COURSE}} {{tools}} {{exp}} {{Project}}"
