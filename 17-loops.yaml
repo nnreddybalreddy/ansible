@@ -12,15 +12,27 @@
 #     - { name: 'nginx', state: 'absent'}
 #     - { name: 'postfix', state: 'absent'}    
 
+# - name: install
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: install
+#     ansible.builtin.dnf:
+#       name: "{{item.name}}"
+#       state: "{{item.state}}"
+
+#     loop:
+#     - {name: "mysql" , state: "absent"}
+#     - {name: "nginx", state: "latest"}  
+
 - name: install
   hosts: web
-  become: yes
+  become: yes 
   tasks:
-  - name: install
+  - name: install 
     ansible.builtin.dnf:
       name: "{{item.name}}"
       state: "{{item.state}}"
-
     loop:
     - {name: "mysql" , state: "absent"}
     - {name: "nginx", state: "latest"}  
