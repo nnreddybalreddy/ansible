@@ -60,18 +60,35 @@
 #     ansible.builtin.debug:
 #       msg: "{{Course}}"   
 
+# - name: variables 
+#   hosts: localhost 
+#   become: yes
+#   vars:
+#     Course: "Ansible-1" 
+#   tasks:
+#   - name: Task level 
+#     vars:
+#       Course: "Ansible-2"
+#     ansible.builtin.debug:
+#       msg: "{{Course}}"
+#   - name:  Play level variables 
+#     ansible.builtin.debug:
+#       msg: "{{Course}}"   
+
+
 - name: variables 
   hosts: localhost 
   become: yes
   vars:
-    Course: "Ansible-1" 
+    Course: "Docker"
   tasks:
-  - name: Task level 
-    vars:
+  - name: task level 
+    vars: 
       Course: "Ansible-2"
     ansible.builtin.debug:
       msg: "{{Course}}"
-  - name:  Play level variables 
-    ansible.builtin.debug:
-      msg: "{{Course}}"   
+  - name: play level 
+    ansible.builtin.debug: 
+      msg: "{{Course}}"
+
 
