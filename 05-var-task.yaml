@@ -53,7 +53,7 @@
   tasks:
   - name: variable play 
     vars:
-      Course1: "Ansible-2"
+      Course: "Ansible-2"
     ansible.builtin.debug:
-      msg: "{{Course1}}"
+      msg: "{{Course}}"
 
