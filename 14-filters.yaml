@@ -1,9 +1,14 @@
-- name: default
+- name: dict2items
   hosts: localhost
   become: no
   vars:
-    numbers: [1,1,2,3,3,4,4,5,5]
+    my_dict: 
+     course: "docker"
+     trainer: "nnr"
   tasks:
-  - name: default
+  - name: dict2items
     ansible.builtin.debug:
-      msg: "{{numbers | min}}"
+      msg: "before dict {{my_dict}}"
+  - name: dict2items
+    ansible.builtin.debug:
+      msg: "After dict {{my_dict| dict2items }}" 
