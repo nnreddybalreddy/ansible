@@ -18,18 +18,30 @@
 #     ansible.builtin.debug:
 #       msg: "Course::{{Course}} {{Trainer}} {{Duration}}"    
 
+# - name: vars
+#   hosts: localhost
+#   become: yes
+#   vars:
+#     Course: "Docker"
+#   tasks:
+#   - name: Override
+#     vars:
+#       Course: "Kubs"
+#     ansible.builtin.debug:
+#       msg: "{{Course}}"
+#   - name: Inheritance
+#     ansible.builtin.debug:
+#       msg: "{{Course}}"     
+
 - name: vars
-  hosts: localhost
+  hosts: web
   become: yes
   vars:
-    Course: "Docker"
+  - course: "Docker"
   tasks:
-  - name: Override
+  - name: print
     vars:
-      Course: "Kubs"
-    ansible.builtin.debug:
-      msg: "{{Course}}"
-  - name: Inheritance
-    ansible.builtin.debug:
-      msg: "{{Course}}"           
+    - course: "Kubs"
+    ansible.builtin.debug:  
+      msg:"{{course}}" 
 

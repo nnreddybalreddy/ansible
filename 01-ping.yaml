@@ -4,11 +4,19 @@
 #   - name: ping the server
 #     ansible.builtin.ping:
 
-- name: ping the server
+# - name: ping the server
+#   hosts: web
+#   become: yes
+#   tasks:
+#   - name: ping the server
+#     ping:
+
+- name : ping the server
   hosts: web
-  become: yes
   tasks:
-  - name: ping the server
-    ping:
+  - name: ping the server 
+    ansible.builting.ping:
+
+
 
     
