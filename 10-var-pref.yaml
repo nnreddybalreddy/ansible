@@ -30,8 +30,8 @@
 
   tasks: 
   - name: vars_pref 
-    vars:
-      WISHES: "task level wishes"
+    # vars:
+    #   WISHES: "task level wishes"
     ansible.builtin.debug:
       msg: "{{WISHES}}"  
 
